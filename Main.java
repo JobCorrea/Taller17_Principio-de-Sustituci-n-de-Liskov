@@ -13,5 +13,19 @@ public class Main {
         for (Figura f : figuras) {
             f.mostrarArea();
         }
+        System.out.println();
+
+        CuentaBancaria cuenta = new CuentaBancaria("Carlos", 500000);
+        CuentaBancaria ahorros = new CuentaAhorros("Maria", 500000, 0.05);
+
+        cuenta.depositar(100000);
+        cuenta.retirar(50000);
+        cuenta.mostrarSaldo();
+
+        System.out.println();
+
+        ahorros.depositar(100000);
+        ahorros.retirar(50000);
+        ahorros.mostrarSaldo();
     }
 }
