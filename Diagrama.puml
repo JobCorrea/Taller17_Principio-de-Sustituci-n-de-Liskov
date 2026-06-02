@@ -1,0 +1,71 @@
+@@startuml
+
+Figura <|-- Circulo 
+Figura <|-- Rectangulo
+CuentaBancaria <|-- CuentaAhorros
+Transporte <|-- Bicicleta
+Transporte <|-- Coche
+
+abstract class Figura{
+    +calcularArea(): double
+    +mostarArea(): void
+}
+class Circulo{
+    #radio: double
+    +Circulo(radio: double)
+    +calcularArea(): double
+    +mostrarArea(): void
+}
+class Rectangulo{
+    #base: double
+    #altura: double
+    +Rectangulo(base: double, altura: double)
+    +calcularArea(): double
+    +mostrarArea(): void
+}
+
+class CuentaBancaria{
+    #titular: String
+    #saldo: double
+    +CuentaBancaria(titular: String, saldo: double)
+    +depositar(double monto): void
+    +retirar(double monto): void
+    +mostrarSaldo(): void
+}
+class CuentaAhorros{
+    -tasaInteres: double
+    +CuentaAhorros(titular: String, saldo: double, double: tasaInteres)
+    +depositar(double monto): void
+    +retirar(double monto): void
+    +aplicarInteres(): void
+
+}
+
+class Transporte {
+    #nombre: String
+    +Transporte(nombre: String)
+    +mover(): void
+}
+
+class Bicicleta {
+    +Bicicleta(nombre: String)
+    +mover(): void
+}
+
+class Coche {
+    +Coche(nombre: String)
+    +mover(): void
+}
+class Main {
+    +main(args: String[]): void
+}
+Main ..> Figura
+Main ..> Circulo
+Main ..> Rectangulo
+Main ..> CuentaBancaria
+Main ..> CuentaAhorros
+Main ..> Transporte
+Main ..> Bicicleta
+Main ..> Coche
+@@enduml
+
