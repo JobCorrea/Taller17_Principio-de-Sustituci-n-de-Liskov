@@ -27,5 +27,14 @@ public class Main {
         ahorros.depositar(100000);
         ahorros.retirar(50000);
         ahorros.mostrarSaldo();
+        System.out.println();
+
+        Transporte transporte = new Transporte("Transporte general");
+        Transporte bicicleta = new Bicicleta("Juan");
+        Transporte coche = new Coche("Maria");
+
+        transporte.mover();
+        bicicleta.mover();
+        coche.mover();
     }
 }
